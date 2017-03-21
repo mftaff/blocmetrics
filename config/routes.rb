@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  root 'landing#landing'
+
+  get 'landing/about'
+  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
