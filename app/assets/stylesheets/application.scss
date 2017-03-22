@@ -28,13 +28,42 @@ body {
     border-right: 1px solid grey;
 }
 
+.nav {
+    padding-top: .15em;
+    background: #c7c7c7;
+    border-bottom: thick solid #bfbfbf;
+}
+
+.nav a {
+    color: grey;
+}
+
+.nav a:hover {
+    text-decoration: none;
+    color: #927c7c;
+}
+
+.nav a:active {
+    text-decoration: none;
+    color: #a85454;
+}
+
 .menu-icon {
-    position: fixed;
-    padding: 0.3em 0.3em 0em 0.3em;
-    margin-left: 1em;
-    margin-top: 1em;
+    position: relative;
+    // padding: 0.3em 0.3em 0em 0.3em;
+    // margin-left: 1em;
+    // margin-top: 1em;
+    left: 4%;
+    float: left;
+    clear: both;
 }
 
 .menu-list {
     background: rgba(76, 76, 76, 0.2);
+}
+
+.user-panel {
+    position: relative;
+    float: right;
+    right: 4%;
 }
