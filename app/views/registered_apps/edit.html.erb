@@ -1,0 +1,15 @@
+<%= link_to 'Show', @registered_app %> |
+<%= link_to 'Back', registered_apps_path %>
+
+<div class="container">
+    <div class="page-header text-center">
+        <h1>Edit registered app's details.</h1>
+        <p>Update any part of the form, and then click the save button.</p>
+    </div>
+</div>
+<div class="container text-center">
+    <%= render 'form' %>
+    
+    <%= link_to 'View', @registered_app %> |
+    <%= link_to 'Home', registered_apps_path %>
+</div>

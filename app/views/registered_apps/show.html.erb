@@ -1,0 +1,22 @@
+<div class="container">
+    <div class="page-header text-center">
+        <h1>Tracked App</h1>
+        <p>Below you can view your apps details.</p>
+    </div>
+</div>
+
+<div class="container text-center">
+  <h4>
+    <strong>Name:</strong>
+    <%= @registered_app.name %>
+  </h4>
+  
+  <h5>
+    <strong>Url:</strong>
+    <%= @registered_app.url %>
+  </h5>
+  
+  <br>
+  <%= link_to 'Edit', edit_registered_app_path(@registered_app) %> |
+  <%= link_to 'Home', registered_apps_path %>
+</div>

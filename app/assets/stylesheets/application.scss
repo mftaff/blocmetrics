@@ -22,30 +22,30 @@ body {
     background: #d5d5d5;
 }
 
+a {
+    color: grey;
+}
+
+a:hover {
+    text-decoration: none;
+    color: #927c7c;
+}
+
+a:active {
+    text-decoration: none;
+    color: #a85454;
+}
+
 .page-border {
     padding: 0px;
-    border-left: 1px solid grey;
-    border-right: 1px solid grey;
+    box-shadow: 0 9px 0px 0px #d5d5d5, 0 -9px 0px 0px #d5d5d5, 5px 0 7px -4px #736a53, -5px 0 7px -4px #736a53;
+    // border-bottom: thick solid #bfbfbf;
 }
 
 .nav {
     padding-top: .15em;
     background: #c7c7c7;
     border-bottom: thick solid #bfbfbf;
-}
-
-.nav a {
-    color: grey;
-}
-
-.nav a:hover {
-    text-decoration: none;
-    color: #927c7c;
-}
-
-.nav a:active {
-    text-decoration: none;
-    color: #a85454;
 }
 
 .menu-icon {
@@ -66,4 +66,10 @@ body {
     position: relative;
     float: right;
     right: 4%;
+}
+
+.form-override {
+    position: relative;
+    width: 36%;
+    left: 32%;
 }

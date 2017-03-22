@@ -1,0 +1,31 @@
+<div class="container">
+    <div class="page-header text-center">
+        <h1>Registered Apps</h1>
+        <p>Displayed is a list of all Apps that you are currently Tracking.</p>
+    </div>
+</div>
+
+<div class="container">
+  <% @registered_apps.each do |registered_app| %>
+    <div class="apps text-center">
+      <div class="app-border">
+        <h4 class="app-name"><%= registered_app.name %></h4>
+        <div class="dropdown app-menu">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="glyphicon glyphicon-option-horizontal"></span></a>
+          <ul class="dropdown-menu dropdown-menu-right">
+            <li><%= link_to 'View', registered_app, class: 'btn btn-success btn-xs' %></li>
+            <li><%= link_to 'Edit', edit_registered_app_path(registered_app), class: 'btn btn-default btn-xs' %></li>
+            <li><%= link_to 'Destroy', registered_app, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger btn-xs' %></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  <% end %>
+  <br>
+  <div class="apps text-center">
+    <div class="app-border">
+      <h4 class="app-name"><%= link_to 'Register a new app', new_registered_app_path %></h4>
+    </div>
+  </div>
+</div>
+

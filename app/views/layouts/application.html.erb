@@ -16,6 +16,7 @@
         <ul class="dropdown-menu menu-list">
           <li><%= link_to "Home", root_path %></li>
           <li><%= link_to "About", landing_about_path %></li>
+          <li><%= link_to "Apps", registered_apps_path %></li>
         </ul>
       </div>
       <div class="user-panel">
@@ -42,7 +43,7 @@
     <% end %> 
     
     <%= yield %>
-    
+
   </div>
   
 </body>

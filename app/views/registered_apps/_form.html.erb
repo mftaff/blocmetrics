@@ -1,0 +1,26 @@
+
+<%= form_for(@registered_app) do |f| %>
+  <% if @registered_app.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@registered_app.errors.count, "error") %> prohibited us from moving on:</h2>
+
+      <ul>
+      <% @registered_app.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  
+  <div class="form-group form-override">
+      <%= f.label :name %>
+      <%= f.text_field :name, class: 'form-control', placeholder: "Enter Application Name..." %>
+  </div>   
+  <div class="form-group form-override">
+      <%= f.label :url %>
+      <%= f.text_field :url, class: 'form-control', placeholder: "Enter Apps Unique URL..." %>
+  </div> 
+  <div class="form-group">
+      <%= f.submit "Track App", class: 'btn btn-success' %>
+  </div>
+<% end %>
