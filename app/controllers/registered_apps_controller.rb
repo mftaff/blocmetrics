@@ -23,7 +23,8 @@ class RegisteredAppsController < ApplicationController
   # POST /registered_apps
   def create
     @registered_app = RegisteredApp.new(registered_app_params)
-
+    @registered_app.user = current_user
+    Rails.logger.info ">>> #{current_user}"
     if @registered_app.save
       flash[:notice] = "\"#{@registered_app.name}\" was successfully added to your tracked apps."
       redirect_to @registered_app

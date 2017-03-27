@@ -18,7 +18,7 @@ class API::EventsController < ApplicationController
         else
             @event = Event.create!(
                 registered_app: registered_application,
-                name: params[:name]
+                name: request.filtered_parameters["event"]["name"]
             )
             
             if @event.save
