@@ -1,6 +1,45 @@
 <div class="container">
     <div class="page-header text-center">
-        <h1>About page</h1>
-        <p>add help, general info etc. here</p>
+        <h1>About Us</h1>
+        <p>Blocmetrics is a free online analytics service</p>
+    </div>
+    <div class="text-center">
+        <h3>Some of the features available to you:</h3>
+        <ul id="about">
+            <li class="about-li">Simple, clean interface for managing or adding your apps.</li>
+            <li class="about-li">Data is displayed intuitively using graphs.</li>
+            <li class="about-li">Can easily handle multiple apps.</li>
+            <li class="about-li">Adding events to track is easy.</li>
+            <li class="about-li">Uses a simple API to receive event data.</li>
+        </ul>
+    </div>
+    <br><br>
+    <div class="text-center install-guide">
+        <h4 class="panel-heading">How to setup your application to send events to blocmetrics.</h4>
+        <br>
+        <p>Add this block of code to: <i>~workspace/app/assets/javascripts/application.js</i></p>
+        <small>'blocmetrics install'</small>
+        <pre id="about-for-application-js">
+var blocmetrics = {};
+
+blocmetrics.report = function(eventName) {
+    var event = {event: { name: eventName}};
+    
+    var request = new XMLHttpRequest();
+    
+    request.open("POST", "https://blocmetrics-mftaff.c9users.io:8080/api/events", true);
+    request.setRequestHeader('Content-Type', 'application/json');
+    request.send(JSON.stringify(event));
+};
+        </pre>
+        <br>
+        <p>There are many ways to add event trackers. Here is an example using jquery.</p>
+        <p>Add this snippet below the install block in: <i>~workspace/app/assets/javascripts/application.js</i> </p>
+        <small>This tracker will create a 'page load' event.</small>
+        <pre id="about-for-application-js">
+$( document ).ready(function() {
+    blocmetrics.report('page load');
+});
+        </pre>
     </div>
 </div>

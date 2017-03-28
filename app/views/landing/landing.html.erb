@@ -2,5 +2,25 @@
     <div class="page-header text-center">
         <h1>Welcome to Blocmetrics!</h1>
         <p>A simple solution for data-driven website management.</p>
+        <p>
+            Please <%= link_to "Sign In", new_user_session_path, :class => 'navbar-link'  %> or
+            <%= link_to "Sign Up", new_user_registration_path, :class => 'navbar-link'  %> to get started!
+        </p>
+    </div>
+    <div class="row text-center">
+        <div class="col-md-4">
+            <h2>Access our simple, yet powerful interface!</h2>
+            <p><%= link_to "View", registered_apps_path, :class => 'navbar-link' %> graphs of all your tracked events all in one place.</p>
+        </div>    
+        <div class="col-md-4">
+            <h2>Sign up for a free account!</h2>
+            <p><%= link_to "Sign Up", new_user_registration_path, :class => 'navbar-link'  %> is completely free!</p>
+        </div>         
+        <div class="col-md-4">
+            <h2>Read the docs.</h2>
+            <p><%= link_to "Read the Docs", landing_about_path, :class => 'navbar-link'  %> for help configuring your app with blocmetrics, or just to browse the features!</p>
+        </div>    
     </div>
 </div>
+
+
