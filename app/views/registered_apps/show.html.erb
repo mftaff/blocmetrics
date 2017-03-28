@@ -21,8 +21,6 @@
     <%= line_chart @registered_app.events.group_by_day(:created_at).count %>
   </div>
   
-  <p><%= render partial: 'event_render', locals: { events: @events } %></p>
-  
   <br>
   <%= link_to 'Edit', edit_registered_app_path(@registered_app) %> |
   <%= link_to 'Home', registered_apps_path %>

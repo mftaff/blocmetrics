@@ -6,7 +6,7 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-2.times do
+3.times do
     user = User.new(
         email: Faker::Internet.safe_email, 
         password: 'teatea', 
@@ -39,12 +39,20 @@ end
 registered_apps = RegisteredApp.all
 event_types = ["alarm", "visit", "click", "watch", "cancel", "save", "delete", "create"]
 
-40.times do
-    Event.create!(
+200.times do
+    event = Event.create!(
         name: event_types[rand(0..7)],
         registered_app: registered_apps.sample
     )
+    event.update_attribute(:created_at, rand(10.minutes .. 1.month).ago)
 end
+
+# This app is set up to send tracking data to blocmmetrics, so it is only added after seeding fake events. 
+RegisteredApp.create!(
+    name: "Intersellar Wiki",
+    url: "https://interstellar-wiki-mftaff.c9users.io",
+    user: User.last
+)
 
 puts "Seed Finished"
 puts "#{User.count} users created"
