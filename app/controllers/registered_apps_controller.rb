@@ -29,7 +29,7 @@ class RegisteredAppsController < ApplicationController
       flash[:notice] = "\"#{@registered_app.name}\" was successfully added to your tracked apps."
       redirect_to @registered_app
     else
-      flash[:notice] = "There was an error trying to save. Please try again."
+      flash[:alert] = "There was an error trying to save. Please try again."
       render :new
     end
   end
@@ -40,7 +40,7 @@ class RegisteredAppsController < ApplicationController
       flash[:notice] = "\"#{@registered_app.name}\" was successfully updated."
       redirect_to @registered_app 
     else
-      flash[:notice] = "There was an error saving your changes. Please try again."
+      flash[:alert] = "There was an error saving your changes. Please try again."
       render :edit
     end
   end
