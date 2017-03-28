@@ -8,6 +8,7 @@
 
 3.times do
     user = User.new(
+        username: Faker::Name.unique.first_name.downcase,
         email: Faker::Internet.safe_email, 
         password: 'teatea', 
         password_confirmation: 'teatea'
@@ -17,6 +18,7 @@
 end
 
 admin_user = User.new(
+    username: 'AdminUser',
     email: 'admin@user.test', 
     password: 'teatea', 
     password_confirmation: 'teatea',
