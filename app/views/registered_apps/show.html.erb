@@ -16,6 +16,11 @@
     <%= @registered_app.url %>
   </h5>
   
+  <div class="charts">
+    <%= pie_chart @registered_app.events.group(:name).count %>
+    <%= line_chart @registered_app.events.group_by_day(:created_at).count %>
+  </div>
+  
   <p><%= render partial: 'event_render', locals: { events: @events } %></p>
   
   <br>
